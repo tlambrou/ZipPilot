@@ -1,0 +1,23 @@
+<% if logged_in? %>
+
+<div class="container">
+  <div class="col-lg-6 offset-lg-3">
+    <h2>My Lists</h2>
+    <div id="lists">
+      <%= render @lists %>
+    </div>
+  </div>
+</div>
+<% else %>
+<div class="row">
+  <div class="col-xs-4 offset-xs-4" id="signin">
+    <%= link_to "Sign Up", signup_path, class:"btn btn-outline-primary btn-primary btn-block my-1" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-4 offset-xs-4" id="signin">
+    <%= link_to "Sign In", login_path, class:"btn btn-outline-info btn-info btn-block my-1" %>
+  </div>
+</div>
+
+<% end %>
