@@ -1,12 +1,13 @@
 <% if logged_in? %>
-
-<div class="container">
-  <div class="col-lg-6 offset-lg-3">
-    <h2>My Lists</h2>
-    <div id="lists">
-      <%= render @lists %>
-    </div>
+<div class="container"><div class="col-sm-3 offset-sm-9">
+  <%= link_to "New List", new_list_path, class:"btn btn-outline-info" %>
+</div>
+<div class="col-lg-6 offset-lg-3">
+  <h2>My Lists</h2>
+  <div id="lists">
+    <%= render @lists %>
   </div>
+</div>
 </div>
 <% else %>
 <div class="row">
@@ -19,5 +20,4 @@
     <%= link_to "Sign In", login_path, class:"btn btn-outline-info btn-info btn-block my-1" %>
   </div>
 </div>
-
 <% end %>

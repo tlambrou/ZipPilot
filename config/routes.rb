@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root to: 'lists#index'
 
   get 'signup', to: 'users#new', as: 'signup'
@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :lists
+  resources :lists do
+    resources :items
+  end
 
   resources :sessions
 
